@@ -141,14 +141,14 @@ def train(num_gpus, rank, group_name, output_directory, epochs, learning_rate,
             print("{}:\t{:.9f}".format(iteration, reduced_loss))
             if with_tensorboard and rank == 0:
                 logger.add_scalar('training_loss', reduced_loss, i + len(train_loader) * epoch)
-
             if (iteration % iters_per_checkpoint == 0):
                 if rank == 0:
-                    checkpoint_path = "{}/waveglow_{}".format(
-                        output_directory, iteration)
+                    #checkpoint_path = "{}/waveglow_{}".format(
+                    #    output_directory, iteration)
+                    checkpoint_path = "{}/waveglow_{}_{:.9f}".format(
+                        output_directory, iteration, reduced_loss)
                     save_checkpoint(model, optimizer, learning_rate, iteration,
                                     checkpoint_path)
-
             iteration += 1
 
 if __name__ == "__main__":
