@@ -8,4 +8,5 @@ inflect==0.2.5
 matplotlib==2.1.0
 protobuf==3.20
 jupyter
+tensorflow==1.15.2
 
