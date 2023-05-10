@@ -10,5 +10,5 @@ protobuf==3.20
 jupyter
 tensorflow==1.15.2
 pandas
-tensorboardX==1.19
+tensorboardX==1.9
 
